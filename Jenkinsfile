@@ -4,7 +4,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from version control
-                git 'https://github.com/Nimish1712/test-project.git'
+                echo 'Checking out...'
             }
         }
         stage('Build') {
