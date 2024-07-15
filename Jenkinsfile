@@ -16,14 +16,14 @@ pipeline {
             steps {
                 // Build steps, e.g., compile code
                 echo 'Building...'
-                sh 'mvn clean install'
+                bat 'mvn clean install'
             }
         }
         stage('Test') {
             steps {
                 // Run tests
                 echo 'Testing...'
-                sh 'mvn test'
+                bat 'mvn test'
             }
         }
         stage('Deploy') {
