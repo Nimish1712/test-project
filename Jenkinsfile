@@ -1,28 +1,33 @@
 pipeline {
-	agent any
-	tools {
-	    Maven
-	}
-	stages {
-		stage("checkout") {
-			steps {
-			    echo 'Checking out the application...'
-			}
-		}
-		stage("build") {
-			steps {
-			    sh "mvn install"
-			}
-		}
-		stage("test") {
+    agent any
+    tools {
+        Maven
+    }
+    stages {
+        stage('Build') {
             steps {
-                echo 'testing the application...'
+                // Build steps, e.g., compile code
+                echo 'Building...'
+                sh "mvn install"
             }
         }
-		stage("deploy") {
+        stage('Test') {
             steps {
-                echo 'deploying the application...'
+                // Run tests
+                echo 'Testing...'
             }
         }
-	}
+        stage('Deploy') {
+            steps {
+                // Deploy the application
+                echo 'Deploying...'
+            }
+        }
+    }
+    post {
+        always {
+            // Clean up
+            echo 'Cleaning up...'
+        }
+    }
 }
