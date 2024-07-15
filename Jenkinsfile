@@ -8,7 +8,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from version control
-                git credentialsId: 'c7447bee-5339-4f33-ae27-42e10189ccba', url: 'https://github.com/Nimish1712/test-project'
+                //git credentialsId: 'c7447bee-5339-4f33-ae27-42e10189ccba', url: 'https://github.com/Nimish1712/test-project'
             }
         }
         stage('Build') {
