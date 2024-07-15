@@ -1,12 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Checkout') {
-            steps {
-                // Checkout code from version control
-                echo 'Checking out...'
-            }
-        }
         stage('Build') {
             steps {
                 // Build steps, e.g., compile code
